@@ -1,11 +1,11 @@
 package com.kolkata.Main;
 
-import com.kolkata.ExceptionHandling.ExceptionHandlingImpl;
+import com.kolkata.ExceptionHandling.MultithreadingImpl;
 
-public class ExceptionHandlingMain {
+public class MultithreadingMain {
 
 	public static void main(String[] args) {
-		ExceptionHandlingImpl exHaImpl = new ExceptionHandlingImpl();
+		MultithreadingImpl exHaImpl = new MultithreadingImpl();
 		Thread thread1 = new Thread(exHaImpl);
 		Thread thread2 = new Thread(exHaImpl);
 		Thread thread3 = new Thread(exHaImpl);

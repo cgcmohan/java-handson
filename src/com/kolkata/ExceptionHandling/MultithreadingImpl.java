@@ -1,7 +1,7 @@
 package com.kolkata.ExceptionHandling;
 
-public class ExceptionHandlingImpl implements Runnable{
-	int className = ExceptionHandlingImpl.super.hashCode();
+public class MultithreadingImpl implements Runnable{
+	int className = MultithreadingImpl.super.hashCode();
 	@Override
 	public void run() {
 		/**
