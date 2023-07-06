@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * only public, abstract & final are permitted for outer class, it can never be private
+ * only public, abstract & final are permitted for outer class, it can never be private or protected
  * 
  * Child classed can't be created for a class declared as final
  */
-final class ImmutableClass {
+ public final class ImmutableClass {
 
 	/**
 	 * Using private, we can't directly access the field
