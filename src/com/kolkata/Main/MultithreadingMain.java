@@ -1,24 +1,25 @@
 package com.kolkata.Main;
 
 import com.kolkata.ExceptionHandling.MultithreadingImpl;
+import com.kolkata.ExceptionHandling.WaitNotify;
 
 public class MultithreadingMain {
 
 	public static void main(String[] args) {
-		MultithreadingImpl exHaImpl = new MultithreadingImpl();
-		Thread thread1 = new Thread(exHaImpl);
-		Thread thread2 = new Thread(exHaImpl);
-		Thread thread3 = new Thread(exHaImpl);
-		thread1.start();
-		thread2.start();
-		try {
-			System.out.println(thread2.currentThread().getName());
-			thread2.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		thread3.start();
+//		MultithreadingImpl exHaImpl = new MultithreadingImpl();
+//		Thread thread1 = new Thread(exHaImpl);
+//		Thread thread2 = new Thread(exHaImpl);
+//		Thread thread3 = new Thread(exHaImpl);
+//		thread1.start();
+//		thread2.start();
+//		try {
+//			System.out.println(thread2.currentThread().getName());
+//			thread2.join();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		thread3.start();
 		/**
 		 * Can we run a thread twice?
 		 *  -> No. After starting a thread, it can never be started again. If you does so, an IllegalThreadStateException is thrown. 
@@ -33,6 +34,22 @@ public class MultithreadingMain {
 		 */ 
 //		thread1.run();
 //		thread1.run();
+		
+		WaitNotify waitNotifyExample = new WaitNotify();
+		
+		new Thread() {
+			@Override
+			public void run() {
+				waitNotifyExample.fire(60);
+			}
+		}.start();
+		
+		new Thread() {
+			@Override
+			public void run() {
+				waitNotifyExample.reload();
+			}
+		}.start();
 	}
 
 }
